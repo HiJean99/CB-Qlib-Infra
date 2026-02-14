@@ -1,0 +1,39 @@
+# --- Data and Binaries ---
+# 排除所有的 CSV 数据源（体积巨大）
+csv_data/
+*.csv
+
+# 排除 Qlib 生成的二进制数据（如果它们在项目目录内的话）
+# 即使您的数据在 ~/.qlib，也建议加上这条以防万一
+.qlib/
+*.bin
+
+# --- Logs and Downloads ---
+*.log
+download_errors.log
+
+# --- Python & Environment ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.metadata
+
+# --- IDEs & OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+
+# --- Sensitive Content ---
+.env
+# 虽然您通过脚本参数传入 Token，但如果有任何配置文件包含 key，请列在这里
+
+rdagent_factor_mining_guide.md
