@@ -1,4 +1,4 @@
-# QLIBv2: 可转债量化数据基建
+# QLIB: 可转债量化数据基建
 
 这是一个基于 Qlib 格式的可转债 (Convertible Bond) 数据采集、清洗与转换工程。它负责从 Tushare 获取全量的行情与特有因子数据，并将其转化为 Qlib 高效的二进制格式。
 
@@ -15,7 +15,7 @@ pip install tushare pandas qlib loguru fire tqdm datacompy
 ### 2. 配置 API Token (极其重要)
 为了安全起见，Token 不应存储在代码中。请按照以下步骤配置：
 
-1.  在根目录下创建 `.env` 文件（该文件已经被 `.gitignore` 忽略，不会上传）：
+1.  在根目录下创建 `.env` 文件：
     ```bash
     cp .env.example .env
     ```
@@ -35,5 +35,3 @@ pip install tushare pandas qlib loguru fire tqdm datacompy
 - `csv_data/`: 存储原始 CSV 数据（不提交）。
 - `run_*.sh`: 一键式操作脚本。
 
----
-*注：本项目仅负责数据基建，因子挖掘工作请参考 `rdagent_factor_mining_guide.md`*
