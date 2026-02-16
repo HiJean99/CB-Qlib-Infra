@@ -21,6 +21,12 @@ OUTPUT_DIR="csv_data"
 # 1. Data Collection
 echo "Starting Data Collection Phase..."
 echo "Start Date: $START_DATE"
+
+# 1.1 Fetch Bond Data
 ~/miniconda3/envs/q_lab/bin/python3 "$SCRIPT_DIR/collect_cb_data.py" --token "$API_TOKEN" --start_date "$START_DATE" --output_dir "$OUTPUT_DIR"
+
+# 1.2 Fetch Index Data
+echo "Fetching Benchmark Index Data..."
+~/miniconda3/envs/q_lab/bin/python3 "$SCRIPT_DIR/collect_index_only.py"
 
 echo "Pipeline Completed Successfully."

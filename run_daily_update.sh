@@ -35,10 +35,16 @@ fi
 
 echo "Running High-Speed Daily Update from $START_DATE to $END_DATE..."
 
+# 1. Update Bond Data (Tushare)
 ~/miniconda3/envs/q_lab/bin/python3 scripts/collect_daily_update.py \
     --token "$API_TOKEN" \
     --start_date "$START_DATE" \
     --end_date "$END_DATE" \
     --output_dir csv_data
+
+# 2. Update Index Data (AkShare)
+echo "Updating Index Data..."
+~/miniconda3/envs/q_lab/bin/python3 scripts/update_index_daily.py \
+    --start_date "$START_DATE"
 
 echo "Done."

@@ -1,4 +1,5 @@
 import tushare as ts
+import akshare as ak
 import pandas as pd
 import numpy as np
 import os
@@ -375,7 +376,7 @@ def main():
         save_df.to_csv(file_path, index=False)
 
     print("Daily update complete.")
-    
+
     if missing_alerts:
         print("\n" + "="*40)
         print("WARNING: MISSING CRITICAL DATA DETECTED")
