@@ -170,6 +170,11 @@ class DumpDataBase:
         df = read_as_df(file_path, low_memory=False)
         if self.date_field_name in df.columns:
             df[self.date_field_name] = pd.to_datetime(df[self.date_field_name])
+        
+        # Filter rows with volume > 0 to focus on active trading days
+        if "volume" in df.columns:
+            df = df[df["volume"] > 0]
+            
         # df.drop_duplicates([self.date_field_name], inplace=True)
         return df
 
